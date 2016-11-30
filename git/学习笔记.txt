@@ -1,0 +1,11 @@
+
+如何测试ssh是否配置完毕
+ssh -T git@github.com
+
+如何生产密钥
+ssh-keygen  -t rsa -C "邮件地址"
+
+如何下载一个库
+git clone git@github.com:用户名/库名.git
+
+
