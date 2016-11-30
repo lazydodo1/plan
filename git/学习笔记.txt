@@ -1,4 +1,4 @@
-
+﻿
 如何测试ssh是否配置完毕
 ssh -T git@github.com
 
@@ -9,3 +9,37 @@ ssh-keygen  -t rsa -C "邮件地址"
 git clone git@github.com:用户名/库名.git
 
 
+《qt中使用github.com》
+一、和github.com建立ssh联系
+1、创建密钥
+ssh-keygen -t rsa -C"你自己的邮箱"
+2、密钥填充在github.com
+3、配置个人资料
+git config --globaluser.name "你自己的用户名"
+git config --globaluser.email "你自己的邮箱"
+4、测试配置效果
+ssh -T git@github.com
+
+
+
+二、在github.com上创建一个新的远程库
+
+
+三、配置qt
+Tools --> Options -->版本控制--> Git，
+在"附加在系统PATH之前"一栏中设置Git的所在目录
+重启QtCreator
+
+四、本地代码目录创建本地库
+通常在指定目录下 git init
+qt可以在菜单中操作，Tools菜单->Git项，选择 Create Repository..添加一个仓库。
+
+
+
+四、首次关联
+1、准备本地库数据
+git add .
+git commit -m "..."
+2、设置本地库与远程库关联
+git remote add origin git@github.com:用户名/库名.git
+git push -u origin master
